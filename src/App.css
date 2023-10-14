@@ -1,0 +1,75 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* App.css (o el nombre de tu archivo de estilos) */
+
+/* Estilo para el cuerpo de la página */
+body {
+  position: relative;
+  min-height: 100vh; /* Garantiza que el cuerpo de la página tenga al menos la altura completa del viewport */
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo para el componente Footer */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f0f0f0; /* Cambia el color de fondo según tus preferencias */
+  text-align: center;
+  padding: 10px; /* Ajusta el espaciado según tus preferencias */
+}
+.custom-size {
+  width: 50%; /* Cambia el tamaño según lo que desees */
+  height: auto;
+}
+
+/* src/components/ListaAlumnos.css */
+
+.table-custom {
+  border: 2px solid #ccc; /* Agrega un borde alrededor de la tabla */
+  border-collapse: separate;
+  border-spacing: 10px; /* Espacio entre las celdas de la tabla */
+}
+
+.table-custom th, .table-custom td {
+  padding: 10px; /* Añade espacio entre el contenido y el borde de las celdas */
+}
+
+/* Puedes ajustar estos estilos según tus preferencias */
