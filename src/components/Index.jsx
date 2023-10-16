@@ -12,7 +12,7 @@ import ListaAlumnos from './ListaAlumnos';
 
 function Index() {
 
-  const token = localStorage.getItem("token");
+  const usuario = localStorage.getItem("id");
 
   
 
@@ -24,7 +24,8 @@ function Index() {
       <Barra/>
       <Cita/>
       
-      {token ?
+      
+      {usuario ?
         <BarraClases />
         :
           <BottonRegister/>

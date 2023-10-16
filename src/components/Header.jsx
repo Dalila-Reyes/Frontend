@@ -8,12 +8,12 @@ import { Link } from 'react-router-dom';
 // Define el componente de encabezado
 const Header = () => {
   // Comprueba si el usuario ha iniciado sesión
-  const token = localStorage.getItem("token");
+  const usuario = localStorage.getItem("id");
 
   // Maneja la función de cierre de sesión
   const handleLogout = () => {
     // Elimina el token del localStorage
-    localStorage.removeItem('token');
+    localStorage.removeItem('id');
     
     // Recarga la página para efectuar el cierre de sesión
     window.location.reload();
@@ -44,7 +44,7 @@ const Header = () => {
         {/* Opciones de inicio de sesión o cierre de sesión */}
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            {token ? (
+            {usuario ? (
               // Opciones cuando el usuario ha iniciado sesión
               <>
                 <Link to="/PerfildeUsuario" className="nav-link">

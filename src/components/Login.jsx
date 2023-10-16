@@ -25,9 +25,9 @@ const Login = () => {
 
           if (response.status === 200 && response.data) {
             // Si la solicitud es exitosa, obtendremos un token de sesión del backend
-            const token = response.data;
+            const usuario = response.data;
             // A continuación, puedes manejar el token de sesión, por ejemplo, almacenándolo en el almacenamiento local (localStorage)
-            localStorage.setItem('token', token);
+            localStorage.setItem('id', usuario.id);
             navigate('/');
           }
 

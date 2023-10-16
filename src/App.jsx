@@ -39,7 +39,7 @@ function App() {
           <Route path='/BarraClases' element={<BarraClases />}></Route>
           <Route path='/components/Banner' element={<Banner />}></Route>
           <Route path='/components/ListaAlumnos' element={<ListaAlumnos />}></Route>
-          <Route path='/components/PerfildeUsuario' element={<PerfildeUsuario />}></Route>
+          <Route path='/PerfildeUsuario' element={<PerfildeUsuario />}></Route>
           <Route path='/components/Footer' element={<Footer />}></Route>
           
         </Routes>

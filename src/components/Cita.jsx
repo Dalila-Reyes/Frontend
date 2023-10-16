@@ -31,7 +31,7 @@ function Cita() {
     lineHeight: '80px', // Centra verticalmente el texto en la franja
   };
 
-  const token = localStorage.getItem("token");
+  const usuario = localStorage.getItem("id");
 
   return (
     <div style={{ textAlign: 'center', fontStyle: 'italic' }}>
@@ -45,7 +45,7 @@ function Cita() {
       <div className="d-flex flex-column align-items-center">
         <img src={Logo1} alt="Logo1" width="100" height="100" className="mb-2" />
 
-        {token ?
+        {usuario ?
           <Banner />
           :
           <div style={franjaStyle}>CLASES PRESENCIALES</div>
