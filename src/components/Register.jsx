@@ -19,6 +19,7 @@ const [formData, setFormData] = useState({
   phone: '',
   email: '',
   contraseña: '',
+  foto: null,
 });
   const goBack = () => {
     navigate(-1);
@@ -49,8 +50,29 @@ const [formData, setFormData] = useState({
       email: formData.email,
       contraseña: formData.contraseña,
     };
+
+    // Crear un objeto FormData para enviar la imagen
+    const formDataToSend = new FormData();
+    formDataToSend.append('photo', formData.foto);
+    formDataToSend.append('data', JSON.stringify(newAlumnoData));
     
-  
+
+    fetch('http://localhost:4000/user', {
+      method: 'POST',
+      body: formDataToSend,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Alumno registrado con éxito:', data);
+        navigate('/Login');
+      })
+      .catch((error) => {
+        console.error('Error al registrar al alumno:', error);
+      });
+  };
+
+
+  /*
     // Realiza la solicitud POST al servidor
     fetch('http://localhost:4000/user', {
       method: 'POST',
@@ -72,6 +94,7 @@ const [formData, setFormData] = useState({
         console.error('Error al registrar al alumno:', error);
       });
   };
+  */
   
   const smallText = {
     fontSize: '16px',
@@ -92,6 +115,11 @@ const [formData, setFormData] = useState({
                   <h2>Registro de Alumno</h2>
                   <form onSubmit={handleRegister}>
                   <div className="mb-3">
+
+
+
+
+
                     <label htmlFor="photo" className="form-label">
                       Foto de Perfil:
                     </label>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo1 from "../assets/Cosas/Logo1.jpg";
+import LogoFinal from "../assets/Cosas/LogoFinal.jpg";
 import Banner from "./Banner";
 
 function Cita() {
@@ -43,7 +43,7 @@ function Cita() {
         "donde la fuerza se encuentra en la sabiduría."
       </blockquote>
       <div className="d-flex flex-column align-items-center">
-        <img src={Logo1} alt="Logo1" width="100" height="100" className="mb-2" />
+        <img src={LogoFinal} alt="LogoFinal" width="100" height="70" className="mb-2" />
 
         {usuario ?
           <Banner />

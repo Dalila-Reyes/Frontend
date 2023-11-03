@@ -38,7 +38,7 @@ function App() {
           {/*<Route path='/InicioLogin' element={<InicioLogin />}></Route>*/}
           <Route path='/BarraClases' element={<BarraClases />}></Route>
           <Route path='/components/Banner' element={<Banner />}></Route>
-          <Route path='/components/ListaAlumnos' element={<ListaAlumnos />}></Route>
+          <Route path='/ListaAlumnos' element={<ListaAlumnos />}></Route>
           <Route path='/PerfildeUsuario' element={<PerfildeUsuario />}></Route>
           <Route path='/components/Footer' element={<Footer />}></Route>
           

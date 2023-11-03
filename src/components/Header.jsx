@@ -1,6 +1,6 @@
 // Importa las dependencias necesarias
 import React from 'react';
-import Logo1 from "../assets/Cosas/Logo1.jpg";
+import LogoFinal from "../assets/Cosas/LogoFinal.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -27,7 +27,7 @@ const Header = () => {
         {/* Logotipo */}
         <a className="navbar-brand" href="#">
           <div className="d-flex flex-column align-items-center">
-            <img src={Logo1} alt="Logo1" width="50" height="50" className="mb-2" />
+            <img src={LogoFinal} alt="LogoFinal" width="100" height="70" className="mb-2" />
             <div>
               <strong>El camino del Guerrero</strong> <br />
               <em>Escuela de Kung Fu</em>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './Footer';
 import Header from './Header';
@@ -14,17 +14,30 @@ function Evento() {
   };
 
   const cardStyle = {
-    backgroundColor: 'Gainsboro', // Cambiar el color de fondo a gris
-    padding: '0', // Reducir el relleno para que la tarjeta no agregue espacio innecesario
-    width: '600PX', // Establecer un ancho personalizado para la tarjeta
+    backgroundColor: 'Gainsboro',
+    padding: '0',
+    width: '600px',
     height: '300px',
-    margin: '0 auto', // Centrar la tarjeta en la página
+    margin: '0 auto',
   };
 
   const imageStyle = {
-    width: '230%', // Ajustar el tamaño de la imagen
-    float: 'left', // Hacer que la imagen esté cargada a la izquierda
-    margin: '0', // Eliminar los márgenes para que la imagen esté pegada a la izquierda
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+  };
+
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setSelectedImage(event.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   return (
@@ -41,16 +54,17 @@ function Evento() {
           <div className="col-md-8 mx-auto">
             <div className="card mx-auto" style={cardStyle}>
               <div className="row">
-                <div className="col-md-8">
-                  <img src={Evento1} alt="Evento" style={imageStyle} />
-                </div>
-                <div className="col-md-4">
-                  <div className="card-body">
-                    {/* Contenido de texto aquí */}
-                  </div>
+                <div className="col-md-12">
+                  <img src={selectedImage || Evento1} alt="Evento" style={imageStyle} />
                 </div>
               </div>
             </div>
+            <div className="row mt-3">
+              <div className="col-md-8 mx-auto">
+                <input type="file" accept="image/*" onChange={handleImageChange} />
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

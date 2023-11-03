@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import Footer from './Footer';
-import dalila from "../assets/Cosas/dalila.jpg";
 import axios from 'axios';
 
 
@@ -71,7 +70,7 @@ const Login = () => {
             <div className="col-md-4">
               <div className="card custom-card">
                 <div className="card-body text-center">
-                  <img src={dalila} alt="User" className="mb-3" style={{ width: '100px' }} />
+                  
                   <h2 className="mb-3"></h2>
 
 

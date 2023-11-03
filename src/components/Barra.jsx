@@ -32,6 +32,9 @@ function Barra() {
           <li className="nav-item">
             <Link to="/Contacto" className="nav-link" style={linkStyle}>Ubicacion</Link>
           </li>
+          <li className="nav-item">
+            <Link to="/ListaAlumnos" className="nav-link" style={linkStyle}>ListaAlumnos</Link>
+          </li>
           
           {/*
           <li className="nav-item">
