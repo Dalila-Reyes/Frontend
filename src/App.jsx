@@ -19,6 +19,7 @@ import BarraClases from './components/BarraClases';
 import Banner from './components/Banner';
 import ListaAlumnos from './components/ListaAlumnos';
 import PerfildeUsuario from './components/PerfildeUsuario';
+import EditarUsuario from './components/EditarUsuario';
 
 function App() {
   return (
@@ -35,12 +36,14 @@ function App() {
           <Route path='/Contacto' element={<Contacto />}></Route>
           <Route path='/QuienesSomos' element={<QuienesSomos />}></Route>
           <Route path='/Evento' element={<Evento />}></Route>
+          <Route path='/EditarUsuario' element={<EditarUsuario />}></Route>
           {/*<Route path='/InicioLogin' element={<InicioLogin />}></Route>*/}
           <Route path='/BarraClases' element={<BarraClases />}></Route>
           <Route path='/components/Banner' element={<Banner />}></Route>
           <Route path='/ListaAlumnos' element={<ListaAlumnos />}></Route>
           <Route path='/PerfildeUsuario' element={<PerfildeUsuario />}></Route>
           <Route path='/components/Footer' element={<Footer />}></Route>
+          
           
         </Routes>
       </div>

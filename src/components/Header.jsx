@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
+
 // Define el componente de encabezado
 const Header = () => {
   // Comprueba si el usuario ha iniciado sesión
@@ -16,7 +17,8 @@ const Header = () => {
     localStorage.removeItem('id');
     
     // Recarga la página para efectuar el cierre de sesión
-    window.location.reload();
+    //window.location.reload();
+    history.push("/");
   };
 
   // Renderiza el componente del encabezado
@@ -50,7 +52,7 @@ const Header = () => {
                 <Link to="/PerfildeUsuario" className="nav-link">
                   <FontAwesomeIcon icon={faUser} /> Mi Perfil
                 </Link>
-                <Link to="#" className="nav-link" onClick={handleLogout}>
+                <Link to="/" className="nav-link" onClick={handleLogout}>
                   <FontAwesomeIcon icon={faUser} /> Cerrar Sesión
                 </Link>
               </>
