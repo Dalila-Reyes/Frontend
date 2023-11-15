@@ -15,10 +15,11 @@ const Header = () => {
   const handleLogout = () => {
     // Elimina el token del localStorage
     localStorage.removeItem('id');
+    localStorage.removeItem('rol');
     
     // Recarga la página para efectuar el cierre de sesión
     //window.location.reload();
-    history.push("/");
+    history.push("/Frontend");
   };
 
   // Renderiza el componente del encabezado

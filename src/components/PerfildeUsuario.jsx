@@ -11,6 +11,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const UserDetail = () => {
+
+  const userId = localStorage.getItem("id");
   
   const notify = (mensaje) => {
     toast(mensaje, {
@@ -38,7 +40,7 @@ const UserDetail = () => {
     }
   });
 
-  const userId = localStorage.getItem("id");
+  
   const [user, setUser] = useState(null);
 
   // Función para formatear la fecha de nacimiento
@@ -49,7 +51,7 @@ const UserDetail = () => {
 
   useEffect(() => {
     // Realizar la solicitud HTTP para obtener la información del usuario
-    fetch(`http://localhost:4000/user/${userId}`)
+    fetch(`https://camino-del-guerrero-api.fly.dev/user/${userId}`)
       .then((response) => response.json())
       .then((data) => setUser(data))
       .catch((error) => console.error("Error:", error));
@@ -60,7 +62,7 @@ const UserDetail = () => {
 
   useEffect(() => {
     // Realizar la solicitud GET para obtener la imagen
-    fetch(`http://localhost:4000/user/getPhoto/${userId}`)
+    fetch(`https://camino-del-guerrero-api.fly.dev/user/getPhoto/${userId}`)
       .then((response) => response.blob())
       .then((blob) => {
         const imageUrl = URL.createObjectURL(blob);
@@ -124,6 +126,17 @@ const UserDetail = () => {
                     <p className="card-text text-center">
                       <strong>Fecha de Nacimiento:</strong>{" "}
                       {formatBirthDate(user.birthDate)}
+                    </p>
+                    <p className="card-text text-center">
+                      <strong>Estado:</strong>{" "}
+                      {user.estado == 1 ?
+                      "Activo" : 
+                      "Inactivo"
+                      }
+                    </p>
+                    <p className="card-text text-center">
+                      <strong>Grado:</strong>{" "}
+                      {user.grado}
                     </p>
 
                     <Link

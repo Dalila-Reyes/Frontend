@@ -6,6 +6,9 @@ import Barra from './Barra';
 import Evento1 from "../assets/Eventos/Evento1.jpg";
 
 function Evento() {
+
+  const userRol = localStorage.getItem("rol");
+
   const lineaStyle = {
     width: '100%',
     height: '3px',
@@ -61,7 +64,7 @@ function Evento() {
             </div>
             <div className="row mt-3">
               <div className="col-md-8 mx-auto">
-                <input type="file" accept="image/*" onChange={handleImageChange} />
+                {userRol == "true" ? <input type="file" accept="image/*" onChange={handleImageChange}  /> : ""}
               </div>
             </div>
 

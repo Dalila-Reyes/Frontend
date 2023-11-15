@@ -19,7 +19,7 @@ const Login = () => {
     
       try {
           // Realizamos una solicitud POST al endpoint /api/login en el backend
-          const response = await axios.post('http://localhost:4000/user/login', { email, contraseña });
+          const response = await axios.post('https://camino-del-guerrero-api.fly.dev/user/login', { email, contraseña });
           
 
           if (response.status === 200 && response.data) {
@@ -27,7 +27,8 @@ const Login = () => {
             const usuario = response.data;
             // A continuación, puedes manejar el token de sesión, por ejemplo, almacenándolo en el almacenamiento local (localStorage)
             localStorage.setItem('id', usuario.id);
-            navigate('/');
+            localStorage.setItem('rol', usuario.rol);
+            navigate('/Frontend');
           }
 
           // También puedes redirigir al usuario a una página de inicio o realizar otras acciones

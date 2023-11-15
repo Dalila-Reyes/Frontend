@@ -16,6 +16,9 @@ const Register = () => {
     phone: "",
     email: "",
     contraseña: "",
+    estado: "true",
+    grado: "principiante",
+    rol: false
   });
 
   const goBack = () => {
@@ -44,13 +47,16 @@ const Register = () => {
       birthDate: formData.birthDate,
       email: formData.email,
       contraseña: formData.contraseña,
+      estado: "true",
+      grado: "principiante",
+      rol: false
     };
 
     // Crear un objeto FormData para enviar
     const formDataToSend = new FormData();
     formDataToSend.append("data", JSON.stringify(newAlumnoData));
 
-    fetch("http://localhost:4000/user", {
+    fetch("https://camino-del-guerrero-api.fly.dev/user", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json', // Establece el tipo de contenido a JSON
@@ -69,7 +75,7 @@ const Register = () => {
 
   /*
     // Realiza la solicitud POST al servidor
-    fetch('http://localhost:4000/user', {
+    fetch('https://camino-del-guerrero-api.fly.dev/user', {
       method: 'POST',
       
       headers: {

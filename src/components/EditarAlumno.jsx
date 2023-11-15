@@ -15,7 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 
 
-const EditarUsuario = () => {
+const EditarAlumno = () => {
   
   const notify = (mensaje) => {
     toast(mensaje, {
@@ -35,7 +35,7 @@ const EditarUsuario = () => {
 
   }
 
-  const userId = localStorage.getItem("id");
+  const userId = localStorage.getItem("editarId");
   const [user, setUser] = useState(null);
 
   const [formData, setFormData] = useState({
@@ -137,39 +137,7 @@ const EditarUsuario = () => {
 
     // Crear un objeto FormData para enviar la imagen y los datos
 
-    if (formData.foto) {
-      // si se selecciono una imagen
-      const formDataToSend = new FormData();
-      formDataToSend.append("photo", formData.foto);
-      formDataToSend.append(
-        "data",
-        new Blob([JSON.stringify(newAlumnoData)], { type: "application/json" })
-      );
-
-      fetch(`https://camino-del-guerrero-api.fly.dev/user/edit/${userId}`, {
-        method: "POST",
-        body: formDataToSend,
-        headers: {
-          // Asegúrate de configurar el encabezado adecuadamente
-          // para indicar que estás enviando datos en formato multipart/form-data
-          // y que incluyes una parte JSON y una parte de archivo (imagen).
-          Accept: "application/json",
-        },
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          if(data.status == 'Error'){
-            mensajeError(data.mensaje);
-          }
-          else{
-            localStorage.setItem('mensaje', data.mensaje);
-            window.location.href = "https://dalila-reyes.github.io/Frontend/";
-          }
-        })
-        .catch((error) => {
-          console.error("Error al registrar al alumno:", error);
-        });
-    } else {
+    
       // No hay foto
 
       const formDataToSend = new FormData();
@@ -191,7 +159,6 @@ const EditarUsuario = () => {
         .catch((error) => {
           console.error("Error al registrar al alumno:", error);
         });
-    }
   };
 
   // Solicita la foto de perfil
@@ -235,94 +202,57 @@ const EditarUsuario = () => {
                       className="justify-content-between rounded-circle"
                     />
                     <br />
-                    <input
-                      type="file"
-                      id="foto"
-                      accept="image/*"
-                      onChange={(e) =>
-                        setFormData({ ...formData, foto: e.target.files[0] })
-                      }
-                    />
+                    
                   </div>
                   
                   <ToastContainer />
                   <form onSubmit={handleRegister}>
                     <div className="card-body">
                       <h5 className="card-title text-center">
-                        
-                        <strong>Nombre :</strong>{" "}
+                      Nombre: {formData.firstName} {formData.lastName}
+                      <br />
+                      Correo: {formData.email}
+                      <br />
+                      Telefono: {formData.phone}
+                      <br />
+                      Fecha de nacimiento: {formatDate(formData.birthDate)}
+                      <br />
+                      </h5>
+
+                      <h5 className="card-title text-center">
+                        <strong>Grado:</strong>{" "}
                         <input
                           type="text"
-                          value={formData.firstName}
+                          value={formData.grado}
                           onChange={(e) =>
-                            setFormData({
-                              ...formData,
-                              firstName: e.target.value,
-                            })
+                            setFormData({ ...formData, grado: e.target.value })
                           }
                         />
                       </h5>
                       <h5 className="card-title text-center">
-                        <strong>Apellido:</strong>{" "}
+                        <strong>Estado:</strong>{" "}
                         <input
                           type="text"
-                          value={formData.lastName}
+                          value={formData.estado}
                           onChange={(e) =>
-                            setFormData({
-                              ...formData,
-                              lastName: e.target.value,
-                            })
+                            setFormData({ ...formData, estado: e.target.value })
                           }
                         />
                       </h5>
 
                       <h5 className="card-title text-center">
-                        <strong>Correo:</strong>{" "}
-                        <input
-                          type="text"
-                          value={formData.email}
-                          onChange={(e) =>
-                            setFormData({ ...formData, email: e.target.value })
-                          }
-                        />
-                      </h5>
+                      <strong>Administrador:</strong>{" "}
+                      <input
+                              type="checkbox"
+                              checked={formData.rol}
+                              onChange={(e) =>
+                                setFormData({ ...formData, rol: e.target.checked })
+                              }
+                            />
+                        </h5>
 
-                      <h5 className="card-title text-center">
-                        <strong>Telefono:</strong>{" "}
-                        <input
-                          type="text"
-                          value={formData.phone}
-                          onChange={(e) =>
-                            setFormData({ ...formData, phone: e.target.value })
-                          }
-                        />
-                      </h5>
-                      <h5 className="card-title text-center">
-                        <strong>Fecha de Nacimiento:</strong>{" "}
-                        <input
-                          type="date"
-                          value={formatDate(formData.birthDate)}
-                          onChange={(e) =>
-                            setFormData({
-                              ...formData,
-                              birthDate: e.target.value,
-                            })
-                          }
-                        />
-                      </h5>
-                      <h5 className="card-title text-center">
-                        <strong>Contraseña:</strong>{" "}
-                        <input
-                          type="password"
-                          value={formData.contraseña}
-                          onChange={(e) =>
-                            setFormData({
-                              ...formData,
-                              contraseña: e.target.value,
-                            })
-                          }
-                        />
-                      </h5>
+                      
+                      
 
                       <button type="submit" className="btn btn-dark">
                         Guardar
@@ -350,4 +280,4 @@ const EditarUsuario = () => {
   );
 };
 
-export default EditarUsuario;
+export default EditarAlumno;

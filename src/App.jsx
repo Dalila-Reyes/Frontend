@@ -20,13 +20,15 @@ import Banner from './components/Banner';
 import ListaAlumnos from './components/ListaAlumnos';
 import PerfildeUsuario from './components/PerfildeUsuario';
 import EditarUsuario from './components/EditarUsuario';
+import EditarAlumno from './components/EditarAlumno';
 
 function App() {
   return (
     <Router>
       <div>
         <Routes>
-          <Route path="/" element={<Index />}></Route>
+          {/*<Route path="/https://dalila-reyes.github.io/Frontend/" element={<Index />}></Route>*/}
+          <Route path="/Frontend" element={<Index />}></Route>
           <Route path="/Header" element={<Header />}></Route>
           <Route path="/login" element={<Login />} />
           <Route path='/Barra' element={<Barra />}></Route>
@@ -43,6 +45,8 @@ function App() {
           <Route path='/ListaAlumnos' element={<ListaAlumnos />}></Route>
           <Route path='/PerfildeUsuario' element={<PerfildeUsuario />}></Route>
           <Route path='/components/Footer' element={<Footer />}></Route>
+          <Route path='/EditarAlumno' element={<EditarAlumno />}></Route>
+          
           
           
         </Routes>

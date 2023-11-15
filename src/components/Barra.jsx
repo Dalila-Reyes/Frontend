@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 function Barra() {
 
+  const userRol = localStorage.getItem("rol");
+
   
 
   const navStyle = {
@@ -21,7 +23,7 @@ function Barra() {
       <div className="container" style={navStyle}>
         <ul className="navbar-nav">
         <li className="nav-item">
-            <Link to="/" className="nav-link" style={linkStyle}>Inicio</Link>
+            <Link to="/Frontend" className="nav-link" style={linkStyle}>Inicio</Link>
           </li>
           <li className="nav-item">
             <Link to="/QuienesSomos" className="nav-link" style={linkStyle}>Quienes Somos</Link>
@@ -32,9 +34,11 @@ function Barra() {
           <li className="nav-item">
             <Link to="/Contacto" className="nav-link" style={linkStyle}>Ubicacion</Link>
           </li>
+          {userRol == "true" ? (
           <li className="nav-item">
-            <Link to="/ListaAlumnos" className="nav-link" style={linkStyle}>ListaAlumnos</Link>
-          </li>
+          <Link to="/ListaAlumnos" className="nav-link" style={linkStyle}>ListaAlumnos</Link>
+          </li>) : ("")
+          }
           
           {/*
           <li className="nav-item">
