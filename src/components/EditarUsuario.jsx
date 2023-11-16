@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./Footer";
 import Header from "./Header";
 import Barra from "./Barra";
@@ -164,7 +163,7 @@ const EditarUsuario = () => {
           }
           else{
             localStorage.setItem('mensaje', data.mensaje);
-            //window.location.href = "https://dalila-reyes.github.io/Frontend/";
+            window.location.href = "https://dalila-reyes.github.io/Frontend/";
           }
         })
         .catch((error) => {
@@ -176,7 +175,7 @@ const EditarUsuario = () => {
       const formDataToSend = new FormData();
       formDataToSend.append("data", JSON.stringify(newAlumnoData));
 
-      fetch("http://localhost:4000/user", {
+      fetch("http://localhost:4000/user/update", {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Establece el tipo de contenido a JSON
@@ -187,7 +186,7 @@ const EditarUsuario = () => {
         .then((data) => {
           console.log("Alumno registrado con éxito:", data);
           localStorage.setItem('mensaje', data.mensaje);
-          //window.location.href = "https://dalila-reyes.github.io/Frontend/";
+          window.location.href = "https://dalila-reyes.github.io/Frontend/";
         })
         .catch((error) => {
           console.error("Error al registrar al alumno:", error);
@@ -215,7 +214,7 @@ const EditarUsuario = () => {
     <div>
       <Header />
       <Barra />
-      <SubirClasificador />
+      
       <div style={listaAlumnosStyle}>
         <div className="row justify-content-center">
           {user ? (

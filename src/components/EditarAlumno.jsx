@@ -45,7 +45,7 @@ const EditarAlumno = () => {
     phone: "",
     email: "",
     contraseña: "",
-    profileImage: "",
+    
     grado: "",
     estado: "",
     rol: "",
@@ -128,7 +128,7 @@ const EditarAlumno = () => {
       birthDate: formData.birthDate,
       email: formData.email,
       contraseña: formData.contraseña,
-      profileImage: "imagenes/" + userId + ".jpg",
+      
       grado: formData.grado,
       estado: formData.estado,
       rol: formData.rol,
@@ -143,7 +143,7 @@ const EditarAlumno = () => {
       const formDataToSend = new FormData();
       formDataToSend.append("data", JSON.stringify(newAlumnoData));
 
-      fetch("http://localhost:4000/user", {
+      fetch("http://localhost:4000/user/update", {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Establece el tipo de contenido a JSON
