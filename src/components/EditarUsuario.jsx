@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./Footer";
 import Header from "./Header";
 import Barra from "./Barra";
+import SubirClasificador from "./SubirClasificador";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -128,7 +129,7 @@ const EditarUsuario = () => {
       birthDate: formData.birthDate,
       email: formData.email,
       contraseña: formData.contraseña,
-      profileImage: "imagenes/" + userId + ".jpg",
+      profileImage: null,
       grado: formData.grado,
       estado: formData.estado,
       rol: formData.rol,
@@ -163,7 +164,7 @@ const EditarUsuario = () => {
           }
           else{
             localStorage.setItem('mensaje', data.mensaje);
-            window.location.href = "https://dalila-reyes.github.io/Frontend/";
+            //window.location.href = "https://dalila-reyes.github.io/Frontend/";
           }
         })
         .catch((error) => {
@@ -186,7 +187,7 @@ const EditarUsuario = () => {
         .then((data) => {
           console.log("Alumno registrado con éxito:", data);
           localStorage.setItem('mensaje', data.mensaje);
-          window.location.href = "https://dalila-reyes.github.io/Frontend/";
+          //window.location.href = "https://dalila-reyes.github.io/Frontend/";
         })
         .catch((error) => {
           console.error("Error al registrar al alumno:", error);
@@ -214,6 +215,7 @@ const EditarUsuario = () => {
     <div>
       <Header />
       <Barra />
+      <SubirClasificador />
       <div style={listaAlumnosStyle}>
         <div className="row justify-content-center">
           {user ? (

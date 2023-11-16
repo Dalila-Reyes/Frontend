@@ -28,7 +28,8 @@ const Login = () => {
             // A continuación, puedes manejar el token de sesión, por ejemplo, almacenándolo en el almacenamiento local (localStorage)
             localStorage.setItem('id', usuario.id);
             localStorage.setItem('rol', usuario.rol);
-            navigate('/Frontend');
+            //navigate('/Frontend');
+            window.location.href = "https://dalila-reyes.github.io/Frontend/";
           }
 
           // También puedes redirigir al usuario a una página de inicio o realizar otras acciones

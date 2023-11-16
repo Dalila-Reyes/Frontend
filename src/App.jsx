@@ -21,6 +21,7 @@ import ListaAlumnos from './components/ListaAlumnos';
 import PerfildeUsuario from './components/PerfildeUsuario';
 import EditarUsuario from './components/EditarUsuario';
 import EditarAlumno from './components/EditarAlumno';
+import SubirClasificador from './components/SubirClasificador';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path='/PerfildeUsuario' element={<PerfildeUsuario />}></Route>
           <Route path='/components/Footer' element={<Footer />}></Route>
           <Route path='/EditarAlumno' element={<EditarAlumno />}></Route>
+          <Route path='/SubirClasificador' element={<SubirClasificador />}></Route>
           
           
           
