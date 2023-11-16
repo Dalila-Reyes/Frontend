@@ -56,7 +56,7 @@ const Register = () => {
     const formDataToSend = new FormData();
     formDataToSend.append("data", JSON.stringify(newAlumnoData));
 
-    fetch("https://camino-del-guerrero-api.fly.dev/user", {
+    fetch("http://localhost:4000/user", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json', // Establece el tipo de contenido a JSON
@@ -75,7 +75,7 @@ const Register = () => {
 
   /*
     // Realiza la solicitud POST al servidor
-    fetch('https://camino-del-guerrero-api.fly.dev/user', {
+    fetch('http://localhost:4000/user', {
       method: 'POST',
       
       headers: {

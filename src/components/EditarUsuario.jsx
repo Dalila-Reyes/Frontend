@@ -73,7 +73,7 @@ const EditarUsuario = () => {
   useEffect(() => {
     // Realizar la solicitud HTTP para obtener la información del usuario
     //fetch(`http://localh ost:4000/user/${userId}`)
-    fetch(`https://camino-del-guerrero-api.fly.dev/user/${userId}`)
+    fetch(`http://localhost:4000/user/${userId}`)
 
       .then((response) => response.json())
       .then((data) => {
@@ -146,7 +146,7 @@ const EditarUsuario = () => {
         new Blob([JSON.stringify(newAlumnoData)], { type: "application/json" })
       );
 
-      fetch(`https://camino-del-guerrero-api.fly.dev/user/edit/${userId}`, {
+      fetch(`http://localhost:4000/user/edit/${userId}`, {
         method: "POST",
         body: formDataToSend,
         headers: {
@@ -175,7 +175,7 @@ const EditarUsuario = () => {
       const formDataToSend = new FormData();
       formDataToSend.append("data", JSON.stringify(newAlumnoData));
 
-      fetch("https://camino-del-guerrero-api.fly.dev/user", {
+      fetch("http://localhost:4000/user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Establece el tipo de contenido a JSON
@@ -199,7 +199,7 @@ const EditarUsuario = () => {
 
   useEffect(() => {
     // Realizar la solicitud GET para obtener la imagen
-    fetch(`https://camino-del-guerrero-api.fly.dev/user/getPhoto/${userId}`)
+    fetch(`http://localhost:4000/user/getPhoto/${userId}`)
       .then((response) => response.blob())
       .then((blob) => {
         const imageUrl = URL.createObjectURL(blob);

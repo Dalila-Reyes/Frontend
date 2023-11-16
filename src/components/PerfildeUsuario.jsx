@@ -51,7 +51,7 @@ const UserDetail = () => {
 
   useEffect(() => {
     // Realizar la solicitud HTTP para obtener la información del usuario
-    fetch(`https://camino-del-guerrero-api.fly.dev/user/${userId}`)
+    fetch(`http://localhost:4000/user/${userId}`)
       .then((response) => response.json())
       .then((data) => setUser(data))
       .catch((error) => console.error("Error:", error));
@@ -62,7 +62,7 @@ const UserDetail = () => {
 
   useEffect(() => {
     // Realizar la solicitud GET para obtener la imagen
-    fetch(`https://camino-del-guerrero-api.fly.dev/user/getPhoto/${userId}`)
+    fetch(`http://localhost:4000/user/getPhoto/${userId}`)
       .then((response) => response.blob())
       .then((blob) => {
         const imageUrl = URL.createObjectURL(blob);

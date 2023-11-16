@@ -19,7 +19,7 @@ const Login = () => {
     
       try {
           // Realizamos una solicitud POST al endpoint /api/login en el backend
-          const response = await axios.post('https://camino-del-guerrero-api.fly.dev/user/login', { email, contraseña });
+          const response = await axios.post('http://localhost:4000/user/login', { email, contraseña });
           
 
           if (response.status === 200 && response.data) {

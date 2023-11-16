@@ -13,7 +13,7 @@ const Header = () => {
 
   // Maneja la función de cierre de sesión
   const handleLogout = () => {
-    // Elimina el token del localStorage
+    // Elimina el token del localStorage 
     localStorage.removeItem('id');
     localStorage.removeItem('rol');
     
@@ -53,7 +53,7 @@ const Header = () => {
                 <Link to="/PerfildeUsuario" className="nav-link">
                   <FontAwesomeIcon icon={faUser} /> Mi Perfil
                 </Link>
-                <Link to="/" className="nav-link" onClick={handleLogout}>
+                <Link to="/Frontend" className="nav-link" onClick={handleLogout}>
                   <FontAwesomeIcon icon={faUser} /> Cerrar Sesión
                 </Link>
               </>

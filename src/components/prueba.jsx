@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 export const Prueba = () => {
   const [datos, setDatos] = useState({});
   const [id, setId] = useState(1); // Valor inicial de id
-  const [url, setUrl] = useState(`https://camino-del-guerrero-api.fly.dev/user/${id}`);
+  const [url, setUrl] = useState(`http://localhost:4000/user/${id}`);
 
   useEffect(() => {
     // Función para cargar datos basados en el ID
@@ -20,7 +20,7 @@ export const Prueba = () => {
 
   const handleIdChange = (e) => {
     setId(e.target.value);
-    setUrl(`https://camino-del-guerrero-api.fly.dev/user/${e.target.value}`);
+    setUrl(`http://localhost:4000/user/${e.target.value}`);
   };
 
   return (
@@ -32,7 +32,7 @@ export const Prueba = () => {
           value={id}
           onChange={handleIdChange}
         />
-        <button onClick={() => setUrl(`https://camino-del-guerrero-api.fly.dev/user/${id}`)}>
+        <button onClick={() => setUrl(`http://localhost:4000/user/${id}`)}>
           Consultar
         </button>
       </div>

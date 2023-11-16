@@ -31,7 +31,7 @@ function ListaAlumnos() {
 
   useEffect(() => {
     axios
-      .get("https://camino-del-guerrero-api.fly.dev/user")
+      .get("http://localhost:4000/user")
       .then((response) => {
         setAlumnos(response.data);
       })
